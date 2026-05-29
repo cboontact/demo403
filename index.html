@@ -444,10 +444,10 @@
   <!-- 8. แบบฝึกหัด -->
   <div class="section">
     <div class="section-title exercise-header">8. แบบฝึกหัด — เขียนโค้ดด้วยตัวเอง</div>
-    <p class="ex-desc">ให้นักเรียนพิมพ์โค้ดในช่องสีเหลือง <input class="fill" style="--w:60px" placeholder="..."> ด้วยตัวเอง <span style="color:#888">(ห้าม copy โค้ดจากด้านบน)</span></p>
+    <p class="ex-desc">โค้ดด้านล่างคือไฟล์ทั้งหมด — ช่องสีเหลืองคือส่วนที่ต้องเปลี่ยนเอง อ่านคอมเมนต์เพื่อดูว่าต้องใส่อะไร</p>
     <div class="ex-legend" style="margin-bottom:16px;">
       <span><span class="dot-fill"></span> ช่องที่ต้องพิมพ์เอง</span>
-      <span><span class="dot-code"></span> โค้ดที่กำหนดให้แล้ว</span>
+      <span><span class="dot-code"></span> โค้ดที่สำเร็จแล้ว ไม่ต้องเปลี่ยน</span>
     </div>
 
     <div class="code-wrap">
@@ -455,75 +455,81 @@
       <div class="code-block" oncontextmenu="return false">
 &lt;!DOCTYPE html&gt;<br>
 &lt;<span class="tg">html</span>&gt;<br>
-&nbsp;&nbsp;&lt;<span class="tg">head</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">base</span> <span class="at">target</span>=<span class="st">"_top"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">style</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.<input class="fill" style="--w:80px" placeholder="site-card"></span> {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">display</span>: <span class="vl"><input class="fill" style="--w:100px" placeholder="inline-block"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">text-align</span>: <span class="vl"><input class="fill" style="--w:70px" placeholder="center"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">margin</span>: <span class="vl"><input class="fill" style="--w:50px" placeholder="8px"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">text-decoration</span>: <span class="vl"><input class="fill" style="--w:50px" placeholder="none"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&lt;<span class="tg">head</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tg">base</span> <span class="at">target</span>=<span class="st">"_top"</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tg">style</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">display</span>: <span class="vl">inline-block</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">text-align</span>: <span class="vl">center</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">margin</span>: <span class="vl">8px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">text-decoration</span>: <span class="vl">none</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card img</span> {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">display</span>: <span class="vl"><input class="fill" style="--w:60px" placeholder="block"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">width</span>: <span class="vl"><input class="fill" style="--w:55px" placeholder="80px"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">height</span>: <span class="vl"><input class="fill" style="--w:55px" placeholder="80px"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">object-fit</span>: <span class="vl">contain</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">border</span>: <span class="vl">2px solid #ddd</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">border-radius</span>: <span class="vl"><input class="fill" style="--w:55px" placeholder="12px"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">padding</span>: <span class="vl">8px</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">background</span>: <span class="vl"><input class="fill" style="--w:50px" placeholder="#fff"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">transition</span>: <span class="vl">transform 0.2s</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card img</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">display</span>: <span class="vl">block</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">width</span>: <span class="vl">80px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">height</span>: <span class="vl">80px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">object-fit</span>: <span class="vl">contain</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">border</span>: <span class="vl">2px solid #ddd</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">border-radius</span>: <span class="vl">12px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">padding</span>: <span class="vl">8px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">background</span>: <span class="vl">#fff</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">transition</span>: <span class="vl">transform 0.2s</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card span</span> {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">display</span>: <span class="vl">block</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">margin-top</span>: <span class="vl">6px</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">font-size</span>: <span class="vl"><input class="fill" style="--w:50px" placeholder="13px"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">color</span>: <span class="vl"><input class="fill" style="--w:50px" placeholder="#333"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">font-family</span>: <span class="vl">sans-serif</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card span</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">display</span>: <span class="vl">block</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">margin-top</span>: <span class="vl">6px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">font-size</span>: <span class="vl">13px</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">color</span>: <span class="vl">#333</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">font-family</span>: <span class="vl">sans-serif</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card:<input class="fill" style="--w:55px" placeholder="hover"> img</span> {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">transform</span>: <span class="vl"><input class="fill" style="--w:100px" placeholder="scale(1.1)"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">border-color</span>: <span class="vl"><input class="fill" style="--w:75px" placeholder="#4a90e2"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card:hover img</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">transform</span>: <span class="vl">scale(1.1)</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">border-color</span>: <span class="vl">#4a90e2</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card:hover span</span> {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">color</span>: <span class="vl"><input class="fill" style="--w:75px" placeholder="#4a90e2"></span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tg">style</span>&gt;<br>
-&nbsp;&nbsp;&lt;/<span class="tg">head</span>&gt;<br>
-&nbsp;&nbsp;&lt;<span class="tg">body</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">h2</span>&gt;<input class="fill" style="--w:120px" placeholder="หัวข้อหน้า">&lt;/<span class="tg">h2</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">p</span>&gt;<input class="fill" style="--w:150px" placeholder="ข้อความแนะนำ">&lt;/<span class="tg">p</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="sl">.site-card:hover span</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pr">color</span>: <span class="vl">#4a90e2</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&lt;/<span class="tg">style</span>&gt;<br>
+&lt;/<span class="tg">head</span>&gt;<br>
+&lt;<span class="tg">body</span>&gt;<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">&lt;!-- การ์ดที่ 1 --&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">a</span> <span class="at">class</span>=<span class="st">"site-card"</span> <span class="at">href</span>=<span class="st">"<input class="fill" style="--w:160px" placeholder="https://...">"</span> <span class="at">target</span>=<span class="st">"_blank"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">img</span> <span class="at">src</span>=<span class="st">"<input class="fill" style="--w:180px" placeholder="URL รูปที่ 1">"</span> <span class="at">alt</span>=<span class="st">"<input class="fill" style="--w:90px" placeholder="ชื่อรูป">"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">span</span>&gt;<input class="fill" style="--w:90px" placeholder="ชื่อเว็บ">&lt;/<span class="tg">span</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tg">a</span>&gt;<br>
+&nbsp;&nbsp;<span class="cm">&lt;!-- เปลี่ยนเป็นหัวข้อของตัวเอง --&gt;</span><br>
+&nbsp;&nbsp;&lt;<span class="tg">h2</span>&gt;<input class="fill" style="--w:160px" placeholder="หัวข้อหน้าเว็บ">&lt;/<span class="tg">h2</span>&gt;<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">&lt;!-- การ์ดที่ 2 --&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">a</span> <span class="at">class</span>=<span class="st">"site-card"</span> <span class="at">href</span>=<span class="st">"<input class="fill" style="--w:160px" placeholder="https://...">"</span> <span class="at">target</span>=<span class="st">"_blank"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">img</span> <span class="at">src</span>=<span class="st">"<input class="fill" style="--w:180px" placeholder="URL รูปที่ 2">"</span> <span class="at">alt</span>=<span class="st">"<input class="fill" style="--w:90px" placeholder="ชื่อรูป">"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">span</span>&gt;<input class="fill" style="--w:90px" placeholder="ชื่อเว็บ">&lt;/<span class="tg">span</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tg">a</span>&gt;<br>
+&nbsp;&nbsp;<span class="cm">&lt;!-- เปลี่ยนเป็นข้อความแนะนำของตัวเอง --&gt;</span><br>
+&nbsp;&nbsp;&lt;<span class="tg">p</span>&gt;<input class="fill" style="--w:180px" placeholder="ข้อความอธิบาย">&lt;/<span class="tg">p</span>&gt;<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">&lt;!-- การ์ดที่ 3 --&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">a</span> <span class="at">class</span>=<span class="st">"site-card"</span> <span class="at">href</span>=<span class="st">"<input class="fill" style="--w:160px" placeholder="https://...">"</span> <span class="at">target</span>=<span class="st">"_blank"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">img</span> <span class="at">src</span>=<span class="st">"<input class="fill" style="--w:180px" placeholder="URL รูปที่ 3">"</span> <span class="at">alt</span>=<span class="st">"<input class="fill" style="--w:90px" placeholder="ชื่อรูป">"</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">span</span>&gt;<input class="fill" style="--w:90px" placeholder="ชื่อเว็บ">&lt;/<span class="tg">span</span>&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tg">a</span>&gt;<br>
+&nbsp;&nbsp;<span class="cm">&lt;!-- การ์ดที่ 1: เปลี่ยน href เป็น URL เว็บที่ชอบ --&gt;</span><br>
+&nbsp;&nbsp;&lt;<span class="tg">a</span> <span class="at">class</span>=<span class="st">"site-card"</span> <span class="at">href</span>=<span class="st">"<input class="fill" style="--w:170px" placeholder="https://เว็บที่ 1">"</span> <span class="at">target</span>=<span class="st">"_blank"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">&lt;!-- เปลี่ยน src เป็น URL รูปโลโก้ของเว็บนั้น --&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">img</span> <span class="at">src</span>=<span class="st">"<input class="fill" style="--w:200px" placeholder="URL รูปโลโก้ที่ 1">"</span> <span class="at">alt</span>=<span class="st">"<input class="fill" style="--w:90px" placeholder="ชื่อรูป">"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">&lt;!-- เปลี่ยนเป็นชื่อเว็บที่แสดงใต้รูป --&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">span</span>&gt;<input class="fill" style="--w:100px" placeholder="ชื่อเว็บที่ 1">&lt;/<span class="tg">span</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tg">a</span>&gt;<br>
 <br>
-&nbsp;&nbsp;&lt;/<span class="tg">body</span>&gt;<br>
+&nbsp;&nbsp;<span class="cm">&lt;!-- การ์ดที่ 2: เปลี่ยน href เป็น URL เว็บที่ชอบ --&gt;</span><br>
+&nbsp;&nbsp;&lt;<span class="tg">a</span> <span class="at">class</span>=<span class="st">"site-card"</span> <span class="at">href</span>=<span class="st">"<input class="fill" style="--w:170px" placeholder="https://เว็บที่ 2">"</span> <span class="at">target</span>=<span class="st">"_blank"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">img</span> <span class="at">src</span>=<span class="st">"<input class="fill" style="--w:200px" placeholder="URL รูปโลโก้ที่ 2">"</span> <span class="at">alt</span>=<span class="st">"<input class="fill" style="--w:90px" placeholder="ชื่อรูป">"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">span</span>&gt;<input class="fill" style="--w:100px" placeholder="ชื่อเว็บที่ 2">&lt;/<span class="tg">span</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tg">a</span>&gt;<br>
+<br>
+&nbsp;&nbsp;<span class="cm">&lt;!-- การ์ดที่ 3: เปลี่ยน href เป็น URL เว็บที่ชอบ --&gt;</span><br>
+&nbsp;&nbsp;&lt;<span class="tg">a</span> <span class="at">class</span>=<span class="st">"site-card"</span> <span class="at">href</span>=<span class="st">"<input class="fill" style="--w:170px" placeholder="https://เว็บที่ 3">"</span> <span class="at">target</span>=<span class="st">"_blank"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">img</span> <span class="at">src</span>=<span class="st">"<input class="fill" style="--w:200px" placeholder="URL รูปโลโก้ที่ 3">"</span> <span class="at">alt</span>=<span class="st">"<input class="fill" style="--w:90px" placeholder="ชื่อรูป">"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tg">span</span>&gt;<input class="fill" style="--w:100px" placeholder="ชื่อเว็บที่ 3">&lt;/<span class="tg">span</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tg">a</span>&gt;<br>
+<br>
+&lt;/<span class="tg">body</span>&gt;<br>
 &lt;/<span class="tg">html</span>&gt;
       </div>
     </div>
 
     <div class="note">
-      ✏️ <strong>คำแนะนำ:</strong> พิมพ์โค้ดตามในช่องสีเหลือง แล้วนำโค้ดทั้งหมดไปวางใน Text Editor ทดสอบในเบราว์เซอร์ — ดูความหมายแต่ละบรรทัดได้จากหัวข้อ 2–6 ด้านบน
+      ✏️ <strong>คำแนะนำ:</strong> CSS ทั้งหมดสำเร็จแล้ว ไม่ต้องแก้ไข — ให้เปลี่ยนเฉพาะช่องสีเหลืองในส่วน &lt;body&gt; คือ หัวข้อ, ข้อความ, URL เว็บ, URL รูป และชื่อเว็บ
     </div>
   </div>
 
