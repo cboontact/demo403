@@ -1,1 +1,369 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เอกสารอธิบายโค้ด — การแทรกลิงค์</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background: #f5f6fa;
+      color: #2d2d2d;
+      line-height: 1.8;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #1e2a3a;
+      color: #fff;
+      padding: 40px 60px;
+      border-bottom: 4px solid #4a90e2;
+    }
+    header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+    header p  { font-size: 14px; color: #a0b0c0; }
+
+    /* ===== LAYOUT ===== */
+    main {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ===== SECTION CARD ===== */
+    .section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e2a3a;
+      border-left: 4px solid #4a90e2;
+      padding-left: 12px;
+      margin-bottom: 18px;
+    }
+
+    /* ===== CODE BLOCK ===== */
+    .code-block {
+      background: #1e2a3a;
+      color: #e8f0fe;
+      border-radius: 8px;
+      padding: 18px 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin-bottom: 14px;
+    }
+    .code-block .comment  { color: #7ec8a0; }   /* คอมเมนต์ — เขียว */
+    .code-block .selector { color: #79c0ff; }   /* selector — ฟ้า */
+    .code-block .prop     { color: #f0a070; }   /* property — ส้ม */
+    .code-block .val      { color: #f8c555; }   /* value — เหลือง */
+    .code-block .tag      { color: #79c0ff; }   /* HTML tag — ฟ้า */
+    .code-block .attr     { color: #f0a070; }   /* attribute — ส้ม */
+    .code-block .str      { color: #a5d6a7; }   /* string — เขียวอ่อน */
+
+    /* ===== DESCRIPTION TABLE ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    th {
+      background: #eef3fb;
+      color: #1e2a3a;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 700;
+    }
+    td { padding: 9px 14px; border-bottom: 1px solid #eee; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f7faff; }
+
+    .badge {
+      display: inline-block;
+      background: #e8f0fe;
+      color: #2060c0;
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* ===== PREVIEW ===== */
+    .preview-area {
+      background: #f0f4ff;
+      border: 2px dashed #c0d0f0;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+    }
+    .site-card {
+      display: inline-block;
+      text-align: center;
+      margin: 8px;
+      text-decoration: none;
+    }
+    .site-card img {
+      display: block;
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      padding: 8px;
+      background: #fff;
+      transition: transform 0.2s;
+    }
+    .site-card span {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      color: #333;
+      font-family: sans-serif;
+    }
+    .site-card:hover img { transform: scale(1.1); border-color: #4a90e2; }
+    .site-card:hover span { color: #4a90e2; }
+
+    /* ===== FLOW DIAGRAM ===== */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .flow-box {
+      background: #eef3fb;
+      border: 2px solid #c0d4f0;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e2a3a;
+      text-align: center;
+      min-width: 120px;
+    }
+    .flow-arrow {
+      font-size: 20px;
+      color: #4a90e2;
+      padding: 0 8px;
+    }
+
+    /* ===== NOTE BOX ===== */
+    .note {
+      background: #fffbea;
+      border-left: 4px solid #f0c040;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 13.5px;
+      margin-top: 14px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      padding-bottom: 20px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>📄 เอกสารอธิบายโค้ด — การแทรกลิงค์ด้วย CSS</h1>
+  <p>โรงเรียนจอมทอง &nbsp;|&nbsp; วิชาเทคโนโลยี &nbsp;|&nbsp; หัวข้อ: HTML & CSS เบื้องต้น</p>
+</header>
+
+<main>
+
+  <!-- 1. ภาพรวม -->
+  <div class="section">
+    <div class="section-title">1. ภาพรวมของโค้ด</div>
+    <p>โค้ดนี้สร้าง <strong>การ์ดลิงค์เว็บไซต์</strong> ที่ประกอบด้วยรูปโลโก้และข้อความ โดยใช้ HTML และ CSS เพียงเล็กน้อย โครงสร้างหลักแบ่งเป็น 2 ส่วน คือ</p>
+    <br>
+    <div class="flow">
+      <div class="flow-box">🎨 &lt;style&gt;<br><small>กำหนดรูปแบบ</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">🏗️ &lt;body&gt;<br><small>โครงสร้างเนื้อหา</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">👆 hover<br><small>เอฟเฟกต์เมาส์</small></div>
+    </div>
+  </div>
+
+  <!-- 2. CSS: .site-card -->
+  <div class="section">
+    <div class="section-title">2. CSS — คลาส <code>.site-card</code> (กล่องการ์ด)</div>
+    <div class="code-block">
+<span class="comment">/* การ์ดแต่ละเว็บไซต์ */</span><br>
+<span class="selector">.site-card</span> {<br>
+&nbsp;&nbsp;<span class="prop">display</span>: <span class="val">inline-block</span>;<br>
+&nbsp;&nbsp;<span class="prop">text-align</span>: <span class="val">center</span>;<br>
+&nbsp;&nbsp;<span class="prop">margin</span>: <span class="val">8px</span>;<br>
+&nbsp;&nbsp;<span class="prop">text-decoration</span>: <span class="val">none</span>;<br>
+}
+    </div>
+    <table>
+      <tr><th>Property</th><th>ค่า</th><th>หมายความว่า</th></tr>
+      <tr>
+        <td><span class="badge">display: inline-block</span></td>
+        <td>inline-block</td>
+        <td>วางการ์ดเรียงต่อกันในแนวนอน (ไม่ขึ้นบรรทัดใหม่)</td>
+      </tr>
+      <tr>
+        <td><span class="badge">text-align: center</span></td>
+        <td>center</td>
+        <td>จัดเนื้อหาในการ์ดให้อยู่กึ่งกลาง</td>
+      </tr>
+      <tr>
+        <td><span class="badge">margin: 8px</span></td>
+        <td>8px</td>
+        <td>เว้นระยะห่างรอบการ์ดทุกด้าน 8 พิกเซล</td>
+      </tr>
+      <tr>
+        <td><span class="badge">text-decoration: none</span></td>
+        <td>none</td>
+        <td>ลบเส้นใต้ลิงค์ปกติออก</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 3. CSS: .site-card img -->
+  <div class="section">
+    <div class="section-title">3. CSS — คลาส <code>.site-card img</code> (รูปโลโก้)</div>
+    <div class="code-block">
+<span class="comment">/* รูปโลโก้ */</span><br>
+<span class="selector">.site-card img</span> {<br>
+&nbsp;&nbsp;<span class="prop">display</span>: <span class="val">block</span>;<br>
+&nbsp;&nbsp;<span class="prop">width</span>: <span class="val">80px</span>; <span class="prop">height</span>: <span class="val">80px</span>;<br>
+&nbsp;&nbsp;<span class="prop">object-fit</span>: <span class="val">contain</span>;<br>
+&nbsp;&nbsp;<span class="prop">border</span>: <span class="val">2px solid #ddd</span>;<br>
+&nbsp;&nbsp;<span class="prop">border-radius</span>: <span class="val">12px</span>;<br>
+&nbsp;&nbsp;<span class="prop">padding</span>: <span class="val">8px</span>;<br>
+&nbsp;&nbsp;<span class="prop">background</span>: <span class="val">#fff</span>;<br>
+&nbsp;&nbsp;<span class="prop">transition</span>: <span class="val">transform 0.2s</span>;<br>
+}
+    </div>
+    <table>
+      <tr><th>Property</th><th>ค่า</th><th>หมายความว่า</th></tr>
+      <tr><td><span class="badge">display: block</span></td><td>block</td><td>ให้รูปขึ้นบรรทัดใหม่ แยกจากข้อความด้านล่าง</td></tr>
+      <tr><td><span class="badge">width / height</span></td><td>80px</td><td>กำหนดขนาดกรอบรูปให้เท่ากันทุกรูป</td></tr>
+      <tr><td><span class="badge">object-fit: contain</span></td><td>contain</td><td>ย่อ/ขยายรูปให้พอดีกรอบ โดยไม่บิดเบี้ยว</td></tr>
+      <tr><td><span class="badge">border</span></td><td>2px solid #ddd</td><td>เส้นขอบบางสีเทาอ่อนรอบรูป</td></tr>
+      <tr><td><span class="badge">border-radius: 12px</span></td><td>12px</td><td>ทำให้มุมกรอบโค้งมน</td></tr>
+      <tr><td><span class="badge">padding: 8px</span></td><td>8px</td><td>เว้นช่องว่างระหว่างรูปกับขอบกรอบ</td></tr>
+      <tr><td><span class="badge">background: #fff</span></td><td>#fff (ขาว)</td><td>พื้นหลังรูปเป็นสีขาว ป้องกันโปร่งใส</td></tr>
+      <tr><td><span class="badge">transition: transform 0.2s</span></td><td>0.2s</td><td>ทำให้การเปลี่ยนขนาดตอน hover ค่อยๆ เกิดขึ้น ไม่กระตุก</td></tr>
+    </table>
+  </div>
+
+  <!-- 4. CSS: .site-card span -->
+  <div class="section">
+    <div class="section-title">4. CSS — คลาส <code>.site-card span</code> (ข้อความปุ่ม)</div>
+    <div class="code-block">
+<span class="comment">/* ข้อความปุ่ม */</span><br>
+<span class="selector">.site-card span</span> {<br>
+&nbsp;&nbsp;<span class="prop">display</span>: <span class="val">block</span>;<br>
+&nbsp;&nbsp;<span class="prop">margin-top</span>: <span class="val">6px</span>;<br>
+&nbsp;&nbsp;<span class="prop">font-size</span>: <span class="val">13px</span>;<br>
+&nbsp;&nbsp;<span class="prop">color</span>: <span class="val">#333</span>;<br>
+&nbsp;&nbsp;<span class="prop">font-family</span>: <span class="val">sans-serif</span>;<br>
+}
+    </div>
+    <table>
+      <tr><th>Property</th><th>ค่า</th><th>หมายความว่า</th></tr>
+      <tr><td><span class="badge">display: block</span></td><td>block</td><td>ข้อความขึ้นบรรทัดใหม่ใต้รูป</td></tr>
+      <tr><td><span class="badge">margin-top: 6px</span></td><td>6px</td><td>เว้นช่องว่างระหว่างรูปกับข้อความ</td></tr>
+      <tr><td><span class="badge">font-size: 13px</span></td><td>13px</td><td>ขนาดตัวอักษร</td></tr>
+      <tr><td><span class="badge">color: #333</span></td><td>#333 (เทาเข้ม)</td><td>สีตัวอักษร</td></tr>
+      <tr><td><span class="badge">font-family: sans-serif</span></td><td>sans-serif</td><td>ฟอนต์ไม่มีหัว อ่านง่าย</td></tr>
+    </table>
+  </div>
+
+  <!-- 5. CSS: hover -->
+  <div class="section">
+    <div class="section-title">5. CSS — เอฟเฟกต์ <code>:hover</code> (เมื่อเอาเมาส์ไปวาง)</div>
+    <div class="code-block">
+<span class="comment">/* เอฟเฟกต์เมื่อเอาเมาส์ไปวาง */</span><br>
+<span class="selector">.site-card:hover img</span> {<br>
+&nbsp;&nbsp;<span class="prop">transform</span>: <span class="val">scale(1.1)</span>;<br>
+&nbsp;&nbsp;<span class="prop">border-color</span>: <span class="val">#4a90e2</span>;<br>
+}<br><br>
+<span class="selector">.site-card:hover span</span> {<br>
+&nbsp;&nbsp;<span class="prop">color</span>: <span class="val">#4a90e2</span>;<br>
+}
+    </div>
+    <table>
+      <tr><th>Property</th><th>ค่า</th><th>หมายความว่า</th></tr>
+      <tr><td><span class="badge">transform: scale(1.1)</span></td><td>1.1</td><td>ขยายรูปขึ้น 10% เมื่อเอาเมาส์ไปวาง</td></tr>
+      <tr><td><span class="badge">border-color: #4a90e2</span></td><td>#4a90e2 (น้ำเงิน)</td><td>เปลี่ยนสีขอบเป็นสีน้ำเงิน</td></tr>
+      <tr><td><span class="badge">color: #4a90e2</span></td><td>#4a90e2 (น้ำเงิน)</td><td>เปลี่ยนสีข้อความเป็นสีน้ำเงินตาม</td></tr>
+    </table>
+    <div class="note">
+      💡 <strong>transition</strong> ที่กำหนดไว้ใน <code>.site-card img</code> ทำให้การ scale ค่อยๆ เกิดขึ้นใน 0.2 วินาที ไม่กระโดดทันที
+    </div>
+  </div>
+
+  <!-- 6. HTML Structure -->
+  <div class="section">
+    <div class="section-title">6. โครงสร้าง HTML — การ์ดแต่ละใบ</div>
+    <div class="code-block">
+<span class="comment">&lt;!-- ใช้ &lt;a&gt; ครอบทั้งรูปและข้อความ คลิกได้ทุกจุด --&gt;</span><br>
+&lt;<span class="tag">a</span> <span class="attr">class</span>=<span class="str">"site-card"</span> <span class="attr">href</span>=<span class="str">"https://www.google.com"</span> <span class="attr">target</span>=<span class="str">"_blank"</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="str">"URL_ของรูป"</span> <span class="attr">alt</span>=<span class="str">"google logo"</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">span</span>&gt;Google&lt;/<span class="tag">span</span>&gt;<br>
+&lt;/<span class="tag">a</span>&gt;
+    </div>
+    <table>
+      <tr><th>แท็ก / Attribute</th><th>หน้าที่</th></tr>
+      <tr><td><span class="badge">&lt;a class="site-card"&gt;</span></td><td>ลิงค์ที่ใช้สไตล์การ์ด ครอบทั้งรูปและข้อความไว้ด้วยกัน</td></tr>
+      <tr><td><span class="badge">href="..."</span></td><td>URL ปลายทางเมื่อคลิก</td></tr>
+      <tr><td><span class="badge">target="_blank"</span></td><td>เปิดลิงค์ในแท็บใหม่</td></tr>
+      <tr><td><span class="badge">&lt;img src="..." alt="..."&gt;</span></td><td>แสดงรูปโลโก้ — alt คือข้อความเมื่อรูปไม่โหลด</td></tr>
+      <tr><td><span class="badge">&lt;span&gt;...&lt;/span&gt;</span></td><td>ข้อความชื่อเว็บไซต์ใต้รูป</td></tr>
+    </table>
+  </div>
+
+  <!-- 7. Preview -->
+  <div class="section">
+    <div class="section-title">7. ตัวอย่างผลลัพธ์ (Preview)</div>
+    <div class="preview-area">
+      <a class="site-card" href="https://www.google.com" target="_blank">
+        <img src="https://drive.google.com/thumbnail?id=17NCP0nAkSTNVZA5pcZl6zGEOEUswHC5X&sz=w1000" alt="google logo">
+        <span>Google</span>
+      </a>
+      <a class="site-card" href="https://www.kapook.com" target="_blank">
+        <img src="https://drive.google.com/thumbnail?id=1fT0YJovTeUcKvYsdkSgH2NuzbuC9m2U5&sz=w1000" alt="kapook logo">
+        <span>Kapook.com</span>
+      </a>
+      <a class="site-card" href="https://www.sanook.com" target="_blank">
+        <img src="https://drive.google.com/thumbnail?id=1sI5u1MF_HAp2_jRyAEm-hyBALsjUTpF0&sz=w1000" alt="sanook logo">
+        <span>Sanook.com</span>
+      </a>
+      <a class="site-card" href="https://www.apple.com" target="_blank">
+        <img src="https://drive.google.com/thumbnail?id=1kVLSCnTSEnnA4zobDwyG2qJr5x2EA23h&sz=w1000" alt="apple logo">
+        <span>Apple.com</span>
+      </a>
+      <a class="site-card" href="https://www.chomthong.ac.th" target="_blank">
+        <img src="https://drive.google.com/thumbnail?id=1GPeiNL1el1BPXQVe4FskUMKWvzyvUsYv&sz=w1000" alt="ct logo">
+        <span>โรงเรียนจอมทอง</span>
+      </a>
+    </div>
+    <div class="note">💡 ลองเอาเมาส์ไปวางบนการ์ดเพื่อดูเอฟเฟกต์ hover</div>
+  </div>
+
+</main>
+
+<footer>เอกสารประกอบการเรียน — วิชาเทคโนโลยี โรงเรียนจอมทอง</footer>
+
+</body>
+</html>
